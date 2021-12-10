@@ -2,11 +2,12 @@ package toyproducts.models;
 
 import toyproducts.Toy;
 
-public class HelicopterToy implements Toy{
+
+public class AsianHelicopterToy implements Toy{
     private Integer serialNumber;
     private String type;
 
-    public HelicopterToy(Integer serialNumber) {
+    public AsianHelicopterToy(Integer serialNumber) {
         this.serialNumber = serialNumber;
         type = "Helicopter";
     }

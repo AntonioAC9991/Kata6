@@ -1,14 +1,13 @@
 package kata6;
 
+import branches.AmericanToyBusiness;
 import java.util.Scanner;
-import toyproducts.models.CarToy;
-import toyproducts.models.HelicopterToy;
-import toys.ToyBusiness;
+import business.ToyBusiness;
 
 public class Main {
 
     public static void main(String[] args) {
-        ToyBusiness toyBusiness = new ToyBusiness();
+        ToyBusiness toyBusiness = new AmericanToyBusiness();
         while(true) {
             System.out.println("Write exit for exit");
             Scanner scanner = new Scanner(System.in);

@@ -1,11 +1,14 @@
-package toys;
+package business;
 
 import toyproducts.Toy;
-import toyproducts.models.HelicopterToy;
-import toyproducts.models.CarToy;
+import toyproducts.models.AmericanCarToy;
+import toyproducts.models.AmericanHelicopterToy;
 
-public class ToyBusiness {
-    private SerialNumberGenerator serialNumberGenerator = new SerialNumberGenerator();
+public abstract class ToyBusiness {
+    public SerialNumberGenerator serialNumberGenerator = new SerialNumberGenerator();
+    
+    public abstract Toy createToy(String type);
+    /**
     public Toy createToy(String type) {
         switch(type){
             case("car"):
@@ -22,4 +25,6 @@ public class ToyBusiness {
                 return null;
         }
     }
+    * */
+    
 }
