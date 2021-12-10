@@ -1,12 +1,12 @@
 package toys;
 
-public class Car {
+public class Helicopter {
     private Integer serialNumber;
     private String type;
 
-    public Car(Integer serialNumber) {
+    public Helicopter(Integer serialNumber) {
         this.serialNumber = serialNumber;
-        type = "Car";
+        type = "Helicopter";
     }
     public void pack(){
         System.out.println(type + " serial number: " + serialNumber.toString()+" is packed.\n");
