@@ -3,17 +3,22 @@ package business;
 import factories.SerialNumberGenerator;
 import factories.ToyFactory;
 import toyproducts.Toy;
-import toyproducts.models.AmericanCarToy;
-import toyproducts.models.AmericanHelicopterToy;
+import java.util.HashMap;
+import java.util.Map;
 
 public class ToyBusiness {
-    private ToyFactory toyFactory;
+    private Map<String,ToyFactory> toyFactories = new HashMap<>();
+    private SerialNumberGenerator serialNumberGenerator = new SerialNumberGenerator();
 
-    public ToyBusiness(ToyFactory toyFactory) {
-        this.toyFactory = toyFactory;
+    public ToyBusiness() {
+        this.serialNumberGenerator = new SerialNumberGenerator();
+        this.toyFactories = new HashMap();
+    }
+    public void add (String name, ToyFactory tf){
+        toyFactories.put(name, tf);
     }
     
-    public Toy produceToy(String type){
-        return toyFactory.produceToy(type);
+    public Toy produceToy(String name){
+        return toyFactories.get(name).produceToy(serialNumberGenerator.next());
     }    
 }

@@ -2,16 +2,21 @@ package kata6;
 
 import business.ToyBusiness;
 import factories.ToyFactory;
-import factories.regionalfactories.AmericanToyFactory;
-import factories.regionalfactories.AsianToyFactory;
+import factories.regionalfactories.AmericanCarToyFactory;
+import factories.regionalfactories.AmericanHelicopterToyFactory;
+import factories.regionalfactories.AsianCarToyFactory;
+import factories.regionalfactories.AsianHelicopterToyFactory;
 import java.util.Scanner;
 
 
 public class Main {
 
     public static void main(String[] args) {
-        ToyFactory toyFactory = new AmericanToyFactory();
-        ToyBusiness toyBusiness = new ToyBusiness(toyFactory);
+        ToyFactory carToyFactory = new AmericanCarToyFactory();
+        ToyFactory helicopterToyFactory = new AmericanHelicopterToyFactory();
+        ToyBusiness toyBusiness = new ToyBusiness();
+        toyBusiness.add("car", carToyFactory);
+        toyBusiness.add("helicopter", helicopterToyFactory);
         while(true) {
             System.out.println("Write exit for exit");
             Scanner scanner = new Scanner(System.in);

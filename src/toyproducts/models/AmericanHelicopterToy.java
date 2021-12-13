@@ -11,10 +11,11 @@ public class AmericanHelicopterToy implements Toy{
         this.serialNumber = serialNumber;
         type = "Helicopter";
     }
+    @Override
     public void pack(){
         System.out.println(type + " serial number: " + serialNumber.toString()+" is packed.\n");
     }
-
+    @Override
     public void label(){
         System.out.println(type + " serial number: " + serialNumber.toString()+" is labelled.\n");
     }
